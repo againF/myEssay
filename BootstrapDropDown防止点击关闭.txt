@@ -1,0 +1,33 @@
+(function( win ) {
+	"use strict";
+
+	$( document ).on( "click", ".dropdown-menu[data-sa-dropdown-keep]", function( e ) {
+		var $target = $( e.target );
+		if( !$target.closest( "input[type='button'], input[type='submit'], button" ).length || $target.closest( ".filterbar-filtergroup" ).length ) {
+			e.stopPropagation();
+		}
+	});
+
+})( typeof window !== "undefined" ? window : this );
+
+之后在dropdown-menu上加data-sa-dropdown-keep这个属性即可，如
+<div class="dropdown">
+                        <p><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="listOfOpenItems">View list of open items</a></p>
+                        <div class="dropdown-menu" aria-labelledby="listOfOpenItems" id="listOfOpenItemsDropDownMenu" data-sa-dropdown-keep>
+                            <div class="row">
+                                <div class="col-md-5">Encrypted file</div>
+                                <div class="col-md-5">pm_12-11-17.csv</div>
+                                <div class="col-md-2"><a href="">Fix</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">Duplicate records</div>
+                                <div class="col-md-5">multiple files</div>
+                                <div class="col-md-2"><a href="">Fix</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">Missing SLDR form</div>
+                                <div class="col-md-5"></div>
+                                <div class="col-md-2"><a href="">Fix</a></div>
+                            </div>
+                        </div>
+                    </div>
