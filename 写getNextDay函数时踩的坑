@@ -4,15 +4,19 @@
     nextYear = ++currentYear
 【3】不用传入currentDate参数，直接在函数内部用Date对象的方法获取currentDate就好
 以下是正确代码：
-function getNextDay () {
+function getNextDay (currentYear,currentMonth,currentDay) {
 	var nextYear,
 		nextMonth,
 		nextDay;
-	var CurrentDate = new Date();
-	var currentYear = CurrentDate.getFullYear();
-	var currentMonth = CurrentDate.getMonth() + 1;
-	var currentDay = CurrentDate.getDate();
+	// var CurrentDate = new Date();
+	// var currentYear = CurrentDate.getFullYear();
+	// var currentMonth = CurrentDate.getMonth() + 1;
+	// var currentDay = CurrentDate.getDate();
 	//leap year
+	if( currentMonth < 0 || currentMonth > 12 || currentDay < 0 || currentDay > 31) {
+		console.log("currentDate wrong");
+		return;
+	}
 	if((currentYear % 4 == 0 && currentYear % 100 != 0) || currentYear % 400 == 0) {
 		switch(currentMonth) {
 			case 1 :
