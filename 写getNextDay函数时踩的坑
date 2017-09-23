@@ -2,7 +2,7 @@
 【2】nextYear = currentYear + 1这句不要写成
     nextYear = currentYear++或
     nextYear = ++currentYear
-【3】不用传入currentDate参数，直接在函数内部用Date对象的方法获取currentDate就好
+【3】如果不要求计算任意给出的日期的下一天则不用传入currentDate参数，直接在函数内部用Date对象的方法获取currentDate就好
 以下是正确代码：
 function getNextDay (currentYear,currentMonth,currentDay) {
 	var nextYear,
