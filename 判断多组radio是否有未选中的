@@ -1,0 +1,18 @@
+var raradioGroupIsNotDefinedWarning = function () {
+    var radioName = new Array();
+    $(":radio").each(function () {
+        radioName.push($(this).attr("name"));
+    });
+    radioName.sort();
+    $.unique(radioName);
+    console.log(radioName)
+    console.log(radioName instanceof Array)
+    $.each(radioName,function(i, val) {
+        if (!checkRadio(val)) {
+            console.log("有未选项");
+        }
+    });
+};
+function checkRadio(radioName) {
+    return $("input[name=" + radioName + "]:checked").val() == null ? false : true;
+}
