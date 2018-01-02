@@ -1,0 +1,47 @@
+var formatNumber = function (number, decimals, noThousandSeparator) {
+    if (typeof number === "undefined" || isNaN(number)) {
+        number = 0;
+    }
+
+    var isNagative = 0;
+    var finalNum = "";
+    if (parseFloat(number) < 0) {
+        isNagative = 1;
+        number = Math.abs(number);
+    }
+
+    decimals = decimals || 0;
+    var x = Math.pow(10, decimals);
+
+    number = Math.round(number * x) / x;
+
+    var arrNum = number.toString().split('.');
+    integerOfNum = arrNum[0];
+    digitsOfNum = arrNum.length > 1 ? arrNum[1] : '';
+
+    if (!noThousandSeparator) {
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(integerOfNum)) {
+            integerOfNum = integerOfNum.replace(rgx, '$1' + ',' + '$2');
+        }
+    }
+
+    if (decimals > 0) {
+        var len = digitsOfNum.length;
+
+        if (len < decimals) {
+            for (var i = 0; i < decimals - len; i++) {
+                digitsOfNum += "0";
+            }
+        }
+
+        digitsOfNum = "." + digitsOfNum;
+    }
+
+    if (isNagative == 0) {
+        finalNum = integerOfNum + digitsOfNum;
+    } else {
+        finalNum = "-" + integerOfNum + digitsOfNum;
+    }
+    return finalNum;
+};
