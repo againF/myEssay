@@ -1,0 +1,1 @@
+<input type="text" name="search" class="search_input" required="" oninvalid="setCustomValidity('required');" oninput="setCustomValidity('');">
