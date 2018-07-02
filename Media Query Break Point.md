@@ -18,14 +18,14 @@
 	*Pixel2 XL         411*823
 	*iPhone 5/SE       320*568
 	*iPhone 6/7/8      375*667
-	*iPhone 6/7/8 Plus 417*736
+	*iPhone 6/7/8 Plus 414*736
 	*iPhone X          375*812
 	*iPad              768*1024
 	*iPad Pro          1024*1366
 	*/
 	
 	/*Break Point
-	*417
+	*414
 	*411
 	*375
 	*360
@@ -41,8 +41,8 @@
 	*/
 	//global
 	@media (min-width: 0px) and (max-width: 443px) {}
-	// iPhone 6/7/8 Plus 417*736
-	@media (min-width: 413px) and (max-width: 418px) {}
+	// iPhone 6/7/8 Plus 414*736
+	@media (min-width: 413px) and (max-width: 415px) {}
 	// Pixel2            411*731
 	// Pixel2 XL         411*823
 	@media (min-width: 377px) and (max-width: 412px) {}
