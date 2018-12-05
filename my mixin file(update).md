@@ -56,15 +56,19 @@
 		$fontFamily: 
 		$color: 
 		$padding: 
+		text-decoration: none;
+		$border: 
 	}
 	*/
-	@mixin button($fontSize, $lineHeight, $fontFamily, $color, $padding) {
+	@mixin button($fontSize, $lineHeight, $fontFamily, $color, $padding, $border:1px solid #fff) {
 		display: inline-block;
 		font-size: $fontSize;
 		line-height: $lineHeight;
 		font-family: $fontFamily;
 		color: $color;
 		padding: $padding;
+		text-decoration: none;
+		border: $border;
 	}
 
 ---
